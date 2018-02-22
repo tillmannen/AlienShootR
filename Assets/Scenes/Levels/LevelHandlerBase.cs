@@ -13,6 +13,7 @@ namespace AlienShooter.Levels {
 		public Bullet[] enemyBullets;
 		public float startupDelay = 5;
 		public RectTransform waveText;
+		public LevelTimer timer;
 
 		protected EnemyWaveSpawner activeSpawner = new EnemyWaveSpawner();
 		protected bool levelStarted = false;
@@ -21,39 +22,52 @@ namespace AlienShooter.Levels {
 
 	//    private int levelProgress = 0;
 		private bool gameOverLoaded = false;
-		private IEnumerator StartSpawner(){
+		private IEnumerator StartLevelWithDelay(){
 
 			yield return new WaitForSeconds(startupDelay);
 
+			StartLevel();
+		}
+
+		private void StartSpawner(){
 			var s = Instantiate(spawner, new Vector2(0,8), Quaternion.identity);
 			s.waves = waves;
 			activeSpawner = s;
 			activeSpawner.waveText = waveText;
 
+		}
+
+		private void StartLevel(){
+			StartSpawner();
 			levelStarted = true;
+			timer.StartTimer();
 		}
 
 		protected abstract void CreateWaves();
 
 		public void Start(){
+			timer = new LevelTimer();
 			helper = new EnemyWavesHelper(enemies, enemyBullets);
 			CreateWaves();
 			
 			AlienShooter.GameControl.instance.player.LevelProgress = 0;
 			AlienShooter.GameControl.instance.player.MoneyLastLevel = 0;
 
-			var coroutine = StartSpawner();
+			var coroutine = StartLevelWithDelay();
 			StartCoroutine(coroutine);
 		}
 
 		void Update(){
 			if(activeSpawner.allWavesDestroyed){
 				GameControl.instance.player.LevelProgress = 100;
+				timer.StopTimer();
 			}
 			if(AlienShooter.GameControl.instance.player.LevelProgress >= 100 && !gameOverLoaded) {
 				gameOverLoaded = true;
 				StartCoroutine(EndLevel());
 			}
+			timer.UpdateTimer();
+			GameControl.instance.player.LevelTime = timer.ToString();
 		}
 
 		IEnumerator EndLevel(){
@@ -63,6 +77,7 @@ namespace AlienShooter.Levels {
 		}
 
 		void OnGUI(){
+
 		}
 	}
 }

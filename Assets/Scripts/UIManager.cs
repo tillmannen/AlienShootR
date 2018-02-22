@@ -23,7 +23,7 @@ namespace AlienShooter{
 			if(moneyLabel != null)
 				moneyLabel.text = AlienShooter.GameControl.instance.player.MoneyLastLevel.ToString();
 			if(progressLabel != null)
-				progressLabel.text = AlienShooter.GameControl.instance.player.LevelProgress.ToString()+"%";
+				progressLabel.text = AlienShooter.GameControl.instance.player.LevelTime;
 		}
 
 		public static void GameOver(){

@@ -94,6 +94,7 @@
      <Compile Include="Assets\Scenes\Levels\EnemyWavesHelper.cs" />
      <Compile Include="Assets\Scenes\Levels\Level1Handler.cs" />
      <Compile Include="Assets\Scenes\Levels\LevelHandlerBase.cs" />
+     <Compile Include="Assets\Scenes\Levels\LevelTimer.cs" />
      <Compile Include="Assets\Scripts\BoundsController.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\DebugSceneController.cs" />

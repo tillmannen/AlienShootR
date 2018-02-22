@@ -27,6 +27,7 @@ public class Player {
 
 	public bool IsInLevel { get; set; }
 	public int LevelProgress { get; set; }
+	public string LevelTime { get; set;}
 	public float MoneyLastLevel {get; set; }
 
 }
