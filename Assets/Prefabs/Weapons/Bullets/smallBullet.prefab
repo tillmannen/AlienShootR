@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1679087916502936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.08, y: 5.63, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   speed: 12
-  damage: 100
+  damage: 1000
   hitEffect: {fileID: 1459793196105442, guid: 67f30e9ebd6f54e38b57d4671fcf137a, type: 2}
 --- !u!212 &212150325528025448
 SpriteRenderer:
@@ -138,7 +138,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300046, guid: 4f3d817ad821bc345b488255f0de8318, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.41176468, b: 0.41176468, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

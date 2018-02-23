@@ -27,7 +27,10 @@ public class Player {
 
 	public bool IsInLevel { get; set; }
 	public int LevelProgress { get; set; }
-	public string LevelTime { get; set;}
+	public string LevelTime => AlienShooter.LevelTimer.MillisecondsToString(LevelTimeMilliseconds);
+	public string BestLevelTime => AlienShooter.LevelTimer.MillisecondsToString(BestLevelTimeMilliseconds);
+	public double LevelTimeMilliseconds { get; set;}
+	public double BestLevelTimeMilliseconds { get; set;}
 	public float MoneyLastLevel {get; set; }
 
 }

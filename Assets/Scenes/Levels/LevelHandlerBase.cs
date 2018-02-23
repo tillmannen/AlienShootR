@@ -67,7 +67,8 @@ namespace AlienShooter.Levels {
 				StartCoroutine(EndLevel());
 			}
 			timer.UpdateTimer();
-			GameControl.instance.player.LevelTime = timer.ToString();
+//			GameControl.instance.player.LevelTime = timer.ToString();
+			GameControl.instance.player.LevelTimeMilliseconds = timer.millisecondsPassed;
 		}
 
 		IEnumerator EndLevel(){
