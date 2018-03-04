@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   speed: 12
-  damage: 1000
+  damage: 100
   hitEffect: {fileID: 1459793196105442, guid: 67f30e9ebd6f54e38b57d4671fcf137a, type: 2}
 --- !u!212 &212150325528025448
 SpriteRenderer:
